@@ -3,7 +3,7 @@ defmodule RealtimeFeedApi.UserSocket do
 
   ## Channels
   # channel "room:*", RealtimeFeedApi.RoomChannel
-  channel "feed:lobby", RealtimeFeedApi.FeedChannel
+  channel "feeds", RealtimeFeedApi.FeedChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

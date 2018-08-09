@@ -13,6 +13,8 @@ defmodule RealtimeFeedApi.FeedController do
 
     case Repo.insert(changeset) do
       {:ok, feed} ->
+        RealtimeFeedApi.FeedChannel.broadcast_create(feed)
+
         conn
         |> put_status(:created)
         |> put_resp_header("location", feed_path(conn, :show, feed))
