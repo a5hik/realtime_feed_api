@@ -7,5 +7,7 @@ defmodule RealtimeFeedApi.Router do
 
   scope "/api", RealtimeFeedApi do
     pipe_through :api
+
+    resources "/feeds", FeedController, except: [:new, :edit]
   end
 end
